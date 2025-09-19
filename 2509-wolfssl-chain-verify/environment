@@ -1,0 +1,3 @@
+export SGX_SDK=${HOME}/.local/lib/x86_64-linux-gnu/sgxsdk
+export WOLFSSL_ROOT=${HOME}/res/gitsaves/wolfssl
+export SGX_WOLFSSL_LIB=${HOME}/res/gitsaves/wolfssl/IDE/LINUX-SGX
