@@ -15,6 +15,7 @@
 #include <wolfssl/wolfcrypt/sha256.h>
 
 #include "km.h"
+// #include "km_fixed.h"
 
 // TODO Assume signed object. Want to 1) verify chain, 2) compare match root certificate (with hardcoded/buffer certificate or public key), 3) hash object, 4) verify signature and if hashes match
 
