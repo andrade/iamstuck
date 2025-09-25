@@ -1,0 +1,24 @@
+enclave {
+
+	include "wolfssl/ssl.h"
+	include "wolfssl/wolfcrypt/settings.h"
+	include "wolfssl/wolfcrypt/types.h"
+
+	include "wolfcrypt/test/test.h"
+	include "wolfcrypt/benchmark/benchmark.h"
+
+	trusted {
+		public int make_ecall();
+	};
+	untrusted {
+		// void dump_str([in, string] const char *str);
+
+
+		// From WolfSSL
+		void ocall_print_string([in, string] const char* str);
+		void ocall_current_time([out] double* time);
+		void ocall_low_res_time([out] int* time);
+		size_t ocall_recv(int sockfd, [out, size=len] void *buf, size_t len, int flags) propagate_errno;
+		size_t ocall_send(int sockfd, [in, size=len] const void *buf, size_t len, int flags) propagate_errno;
+	};
+};
